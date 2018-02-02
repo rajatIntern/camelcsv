@@ -1,1 +1,26 @@
 # camelcsv
+In this project we are going to change the one csv to another csv by utilizing camel bindy component in java DSL route.
+
+The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo module in BindyCsvDataFormat.
+
+Then unmarshal object send it to bean processor for cutomizing our data based on requirement.
+
+After that we created outputcsv pojo module and also use csvRecord annotation(This annotation is actual mapping of outputcsv file header this annotation tell camel bindy to where you want to place data field in header).
+
+Then we marshal processor output into outputCSV pojo module and save it to **inbox/outputFile?fileName=outputProduct.csv** using file component.
+
+**Input CSV**
+Header: 
+`Created Date,Item Number,Code,Product,Node,Brand,Product Category,Master Type`
+Values: 
+23-07-2014,109655,GC051SASW,LG REF GC051SASW,FRIDGE,LG,Fridge,Products - Batches and Serial No
+12-10-2015,127950,GCB207GAQV,LG REF GCB207GAQV ARTLINE,FRIDGE,LG,Fridge,Products - Batches and Serial No
+
+In this output CSV we only fetch the require field for output CSV file
+
+**Output CSV**
+Header:
+`product_id,product_name,primary_product_category_id,add_to_categories,product_sku,parent_product_sku,short_description,long_description,list_price,hsh_code,start_selling_date,is_serialized,is_degital,weight,weight_uom_id,height,dept,dimension_uom_id,product_url_name,publish,sales_channel,bar_code,MPN,currency_uom_id,features,manufacturer_party_name`
+Value:
+,LG REF GC051SASW,Fridge,,109655,,,,,,,,,,,,,,,,,,GC051SASW,,,LG
+,LG REF GCB207GAQV ARTLINE,Fridge,,127950,,,,,,,,,,,,,,,,,,GCB207GAQV,,,LG
