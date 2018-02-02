@@ -8,26 +8,25 @@ import pojo.InputCSV;
 import pojo.OutputCSV;
 import processor.Processor;
 
-
 public class Main {
-	public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws Exception {
         CamelContext context = new DefaultCamelContext();
-		final DataFormat inputCSV = new BindyCsvDataFormat(InputCSV.class);
-		final DataFormat outputCSV = new BindyCsvDataFormat(OutputCSV.class);
-			 
-	    context.addRoutes(new RouteBuilder() { 
-	       	@Override 
-	        public void configure() throws Exception {  
-	       	    from("file:inbox/inputFile?fileName=inputProducts.csv&noop=true")
-	       		    .split().tokenize("\n", 10)
-	       		    .unmarshal(inputCSV)
-	       			.bean(Processor.class, "processCSV")
-	       			.marshal(outputCSV)
-	       			.to("file:inbox/outputFile?fileName=outputProduct.csv");
-	        } 
+        final DataFormat inputCSV = new BindyCsvDataFormat(InputCSV.class);
+        final DataFormat outputCSV = new BindyCsvDataFormat(OutputCSV.class);
+
+        context.addRoutes(new RouteBuilder() { 
+            @Override 
+            public void configure() throws Exception {  
+                from("file:inbox/inputFile?fileName=inputProducts.csv&noop=true")
+                    .split().tokenize("\n", 10)
+                    .unmarshal(inputCSV)
+                    .bean(Processor.class, "processCSV")
+                    .marshal(outputCSV)
+                    .to("file:inbox/outputFile?fileName=outputProduct.csv");
+            } 
         }); 
         context.start();
-		Thread.sleep(5000);
-		context.stop();
-	}
+        Thread.sleep(5000);
+        context.stop();
+    }
 }
