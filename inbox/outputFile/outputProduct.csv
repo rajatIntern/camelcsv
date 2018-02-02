@@ -1,0 +1,10 @@
+product_id,product_name,primary_product_category_id,add_to_categories,product_sku,parent_product_sku,short_description,long_description,list_price,hsh_code,start_selling_date,is_serialized,is_degital,weight,weight_uom_id,height,dept,dimension_uom_id,product_url_name,publish,sales_channel,bar_code,MPN,currency_uom_id,features,manufacturer_party_name
+,LG REF GC051SASW,Fridge,,109655,,,,,,,,,,,,,,,,,,GC051SASW,,,LG
+,LG REF GCB207GAQV ARTLINE,Fridge,,127950,,,,,,,,,,,,,,,,,,GCB207GAQV,,,LG
+,LG REF GCB207GAQV ARTLINE +MS2025DW,Fridge,,129086,,,,,,,,,,,,,,,,,,GCB207GAQV +MS2025DW,,,LG
+,LG REF GCB207GLQS PLATINUM SILVER/SHINY STEEL,Fridge,,129214,,,,,,,,,,,,,,,,,,GCB207GLQSPZ,,,LG
+,LG REF GCB207GLQS SHINY STEEL,Fridge,,127733,,,,,,,,,,,,,,,,,,GCB207GLQOOO,,,LG
+,LG REF GCB207GLQS SHINY STEEL,Fridge,,127744,,,,,,,,,,,,,,,,,,GCB207GLABCD,,,LG
+,LG REF GCB207GLQS SHINY STEEL,Fridge,,127755,,,,,,,,,,,,,,,,,,GCB207GLBBBB,,,LG
+,LG REF GCB207GLQS SHINY STEEL,Fridge,,127766,,,,,,,,,,,,,,,,,,GCB207GLQAAAAsss,,,LG
+,LG REF GCB207GLQS SHINY STEEL,Fridge,,127777,,,,,,,,,,,,,,,,,,GCB207GLQSZZZ,,,LG
