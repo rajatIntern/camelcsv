@@ -1,20 +1,25 @@
 # camelcsv
 In this project we are going to change the one csv to another csv by utilizing camel bindy component in java DSL route.
+
 **First step**
 The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo module in BindyCsvDataFormat.
+
 **Second step**
 Then unmarshal object send it to bean processor for cutomizing our data based on requirement.
+
 **Third step**
 After that we created outputcsv pojo module and also use csvRecord annotation(This annotation is actual mapping of outputcsv file header this annotation tell camel bindy to where you want to place data field in header).
+
 **Fourth step**
 Then we marshal processor class output into outputCSV pojo module and save it to **inbox/outputFile?fileName=outputProduct.csv** using file component.
+
 
 **Input CSV**
 Header: 
 `Created Date,Item Number,Code,Product,Node,Brand,Product Category,Master Type`
 Values: 
-23-07-2014,109655,GC051SASW,LG REF GC051SASW,FRIDGE,LG,Fridge,Products - Batches and Serial No
-12-10-2015,127950,GCB207GAQV,LG REF GCB207GAQV ARTLINE,FRIDGE,LG,Fridge,Products - Batches and Serial No
+`23-07-2014,109655,GC051SASW,LG REF GC051SASW,FRIDGE,LG,Fridge,Products - Batches and Serial No
+12-10-2015,127950,GCB207GAQV,LG REF GCB207GAQV ARTLINE,FRIDGE,LG,Fridge,Products - Batches and Serial No`
 
 In this output CSV we only fetch the require field for output CSV file
 
@@ -25,5 +30,5 @@ Header:
 **Note: In this output value we replaced comma(',') into pipe(vertical pipe '|') and empty value is represent as null for better understading**
 
 Value:
-null|LG REF GC051SASW|Fridge|null|109655|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GC051SASW|null|null|LG
-null|LG REF GCB207GAQV ARTLINE|Fridge|null|127950|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GCB207GAQV|null|null|LG
+`null|LG REF GC051SASW|Fridge|null|109655|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GC051SASW|null|null|LG
+null|LG REF GCB207GAQV ARTLINE|Fridge|null|127950|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GCB207GAQV|null|null|LG`
