@@ -41,5 +41,6 @@ Header:
 
 Value:
 
-`null|LG REF GC051SASW|Fridge|null|109655|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GC051SASW|null|null|LG
-null|LG REF GCB207GAQV ARTLINE|Fridge|null|127950|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GCB207GAQV|null|null|LG`
+`null|LGREFGC051SASW|Fridge|null|109655|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GC051SASW|null|null|LG
+
+null|LGREFGCB207GAQVARTLINE|Fridge|null|127950|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GCB207GAQV|null|null|LG`
