@@ -3,7 +3,7 @@ In this project we are going to change the one csv to another csv by utilizing c
 
 **First step**
 
-The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo module in BindyCsvDataFormat.
+The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo model object in BindyCsvDataFormat.
 
 **Second step**
 
@@ -11,23 +11,23 @@ Then unmarshal object send it to bean processor for cutomizing our data based on
 
 **Third step**
 
-After that we created outputcsv pojo module and also use csvRecord annotation(This annotation is actual mapping of outputcsv file header this annotation tell camel bindy to where you want to place data field in header).
+After that we created outputcsv pojo model object and also use csvRecord annotation(This annotation is actual mapping of outputcsv file header this annotation tell camel bindy to where you want to place data field in header).
 
 **Fourth step**
 
-Then we marshal processor class output into outputCSV pojo module and save it to **inbox/outputFile?fileName=outputProduct.csv** using file component.
+Then we marshal processor class output into outputCSV pojo model object and save it to **inbox/outputFile?fileName=outputProduct.csv** using file component.
 
 
 **Input CSV**
 
 Header: 
 
-`Created Date,Item Number,Code,Product,Node,Brand,Product Category,Master Type`
+`Created Date|Item Number|Code|Product|Node|Brand|Product Category|Master Type`
 
 Values: 
 
-`23-07-2014,109655,GC051SASW,LG REF GC051SASW,FRIDGE,LG,Fridge,Products - Batches and Serial No
-12-10-2015,127950,GCB207GAQV,LG REF GCB207GAQV ARTLINE,FRIDGE,LG,Fridge,Products - Batches and Serial No`
+`23-07-2014|109655|GC051SASW|LG REF GC051SASW|FRIDGE|LG|Fridge|Products - Batches and Serial No`
+`12-10-2015|127950|GCB207GAQV|LG REF GCB207GAQV ARTLINE|FRIDGE|LG|Fridge|Products - Batches and Serial No`
 
 In this output CSV we only fetch the require field for output CSV file
 
@@ -35,9 +35,7 @@ In this output CSV we only fetch the require field for output CSV file
 
 Header:
 
-`product_id,product_name,primary_product_category_id,add_to_categories,product_sku,parent_product_sku,short_description,long_description,list_price,hsh_code,start_selling_date,is_serialized,is_degital,weight,weight_uom_id,height,dept,dimension_uom_id,product_url_name,publish,sales_channel,bar_code,MPN,currency_uom_id,features,manufacturer_party_name`
-
-**Note: In this output value we replaced comma(',') into pipe(vertical pipe '|') and empty value is represent as null for better understading**
+`product_id|product_name|primary_product_category_id|add_to_categories|product_sku|parent_product_sku|short_description|long_description|list_price|hsh_code|start_selling_date|is_serialized|is_degital|weight|weight_uom_id|height|dept|dimension_uom_id|product_url_name|publish|sales_channel|bar_code|MPN|currency_uom_id|features|manufacturer_party_name`
 
 Value:
 
