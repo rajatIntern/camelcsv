@@ -32,6 +32,13 @@ Here is the execution of the application for generating output CSV from input.
 
 The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo model object https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/pojo/InputCSV.java.
 
+In main Java file https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/Main.java
+```
+from("file:inbox/inputFile?fileName=inputProducts.csv&noop=true")
+    .split().tokenize("\n", 10)
+    .unmarshal(inputCSV)
+```
+
 We have also define the POJO model for output CSV (https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/pojo/OutputCSV.java) used by process in step 2.
 
 **Step 2**
@@ -39,11 +46,23 @@ We have also define the POJO model for output CSV (https://github.com/rajatInter
 Then unmarshal object send it to bean processor for processing. Here we iterate the CSV and prepare the rows of Output CSV
 https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/processor/Processor.java.
 
+
+In main Java file https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/Main.java
+```
+.bean(Processor.class, "processCSV")
+```
+
 Processor used the OutputCSV.java POJO model we defined, information like generateHeaderColumns=true, append the header for output CSV.
 
 **Step 3**
 
 Then we marshal processor class output into outputCSV pojo model object and save it to **inbox/outputFile?fileName=outputProduct.csv** using file component.
+
+In main Java file https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/Main.java
+```
+.marshal(outputCSV)
+.to("file:inbox/outputFile?fileName=outputProduct.csv");
+```
 
 ---
 
