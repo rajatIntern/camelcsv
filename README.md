@@ -1,4 +1,4 @@
-camelcsv is the demo application to prepare output CSV from input CSV using camel bindy component in java DSL route.
+CamelCSV is the demo application to prepare output CSV from input CSV using camel bindy component in java DSL route.
 
 **Directory information**
 
@@ -26,24 +26,29 @@ camelcsv is the demo application to prepare output CSV from input CSV using came
                     
 ```
 
-**First step**
+Here is the execution of the application for generating output CSV from input.
 
-The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo model object in BindyCsvDataFormat.
+**Step 1**
 
-**Second step**
+The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo model object https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/pojo/InputCSV.java.
 
-Then unmarshal object send it to bean processor for cutomizing our data based on requirement.
+We have also define the POJO model for output CSV (https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/pojo/OutputCSV.java) used by process in step 2.
 
-**Third step**
+**Step 2**
+
+Then unmarshal object send it to bean processor for processing. Here we iterate the CSV and prepare the rows of Output CSV
+https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/processor/Processor.java.
+
+**Step 3**
 
 After that we created outputcsv pojo model object and also use csvRecord annotation(This annotation is actual mapping of outputcsv file header this annotation tell camel bindy to where you want to place data field in header).
 
-**Fourth step**
+**Step 4**
 
 Then we marshal processor class output into outputCSV pojo model object and save it to **inbox/outputFile?fileName=outputProduct.csv** using file component.
 
 
-**Input CSV**
+**Sample Input CSV**
 
 Header: 
 
@@ -56,7 +61,7 @@ Values:
 
 In this output CSV we only fetch the require field for output CSV file
 
-**Output CSV**
+**Sample Output CSV**
 
 Header:
 
