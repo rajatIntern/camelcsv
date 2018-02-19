@@ -87,5 +87,5 @@ Code in main Java file https://github.com/rajatIntern/camelcsv/blob/master/src/m
 
 |product_id|product_name|primary_product_category_id|add_to_categories|product_sku|parent_product_sku|short_description|long_description|list_price|hsh_code|start_selling_date|is_serialized|is_degital|weight|weight_uom_id|height|dept|dimension_uom_id|product_url_name|publish|sales_channel|bar_code|MPN|currency_uom_id|features|manufacturer_party_name|
 |---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
-|null|LGREFGC051SASW|Fridge|null|109655|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GC051SASW|null|null|LG|
-|null|LGREFGCB207GAQVARTLINE|Fridge|null|127950|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|null|GCB207GAQV|null|null|LG|
+||LGREFGC051SASW|Fridge||109655||||||||||||||||||GC051SASW|||LG|
+||LGREFGCB207GAQVARTLINE|Fridge||127950||||||||||||||||||GCB207GAQV|||LG|
