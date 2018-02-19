@@ -1,4 +1,4 @@
-# H3 CamelCSV is the demo application to prepare output CSV from input CSV using camel bindy component (http://camel.apache.org/bindy.html) in java DSL route.
+### CamelCSV is the demo application to prepare output CSV from input CSV using camel bindy component (http://camel.apache.org/bindy.html) in java DSL route.
 
 **Directory information**
 
@@ -54,8 +54,16 @@ Then we marshal processor class output into outputCSV pojo model object and save
 |23-07-2014|109655|GC051SASW|LG REF GC051SASW|FRIDGE|LG|Fridge|Products - Batches and Serial No|
 |12-10-2015|127950|GCB207GAQV|LG REF GCB207GAQV ARTLINE|FRIDGE|LG|Fridge|Products - Batches and Serial No|
 
-In this output CSV we only fetch the require field for output CSV file
+
 ---
+
+###### Addition information
+1. This code is responsible for setting the column value for output CSV
+https://github.com/rajatIntern/camelcsv/blob/cffe019f2c312fadbcc93ebb06c7df71821a4672/src/main/java/processor/Processor.java#L33
+We can put our custom logic here.
+
+2. generateHeaderColumns=true is responsible for generating the header in output CSV.
+https://github.com/rajatIntern/camelcsv/blob/cffe019f2c312fadbcc93ebb06c7df71821a4672/src/main/java/pojo/OutputCSV.java#L8
 
 **Sample Output CSV**
 
