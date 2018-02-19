@@ -1,5 +1,30 @@
-# camelcsv Project
-In this project we are going to change the one csv to another csv by utilizing camel bindy component in java DSL route.
+camelcsv is the demo application to prepare output CSV from input CSV using camel bindy component in java DSL route.
+
+**Directory information**
+
+```bash
+├── camelcsv.iml
+├── inbox (Contain the input and output sample CSV)
+│   ├── inputFile 
+│   │   └── inputProducts.csv
+│   └── outputFile
+│       └── outputProduct.csv
+├── pom.xml
+├── README.md
+├── src
+│   └── main
+│       └── java
+│           ├── Main.java (Starting file)
+│           ├── pojo
+│           │   ├── InputCSV.java (Structure of Input CSV)
+│           │   └── OutputCSV.java (Structure of Output CSV)
+│           └── processor
+│               └── Processor.java (This file will iterate over the each record of CSV and prepare the Output CSV, here is the logic for setting up the column values of output CSV from input CSV.)
+└── target (File generated after compilation)
+    ├── ....
+    ├── ....
+                    
+```
 
 **First step**
 
