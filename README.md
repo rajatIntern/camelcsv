@@ -55,7 +55,7 @@ Code main Java file https://github.com/rajatIntern/camelcsv/blob/master/src/main
 ###### Addition information
 1. This code is responsible for setting the column value for output CSV
 https://github.com/rajatIntern/camelcsv/blob/cffe019f2c312fadbcc93ebb06c7df71821a4672/src/main/java/processor/Processor.java#L33
-We can put our custom logic here.
+**We can put our custom logic here.**
 
 2. generateHeaderColumns=true is responsible for generating the header in output CSV.
 https://github.com/rajatIntern/camelcsv/blob/cffe019f2c312fadbcc93ebb06c7df71821a4672/src/main/java/pojo/OutputCSV.java#L8
