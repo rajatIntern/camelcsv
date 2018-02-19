@@ -30,7 +30,7 @@ Here is the execution of the application for generating output CSV from input.
 
 **Step 1**
 
-The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given pojo model object https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/pojo/InputCSV.java.
+The camel DSL get the file from defined route directory **inbox/inputFile?fileName=inputProducts.csv** then unmarshal the given file according to given POJO model object https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/pojo/InputCSV.java.
 
 In main Java file https://github.com/rajatIntern/camelcsv/blob/master/src/main/java/Main.java
 ```
