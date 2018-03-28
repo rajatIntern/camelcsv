@@ -18,7 +18,7 @@ public class Main {
             @Override 
             public void configure() throws Exception {  
                 from("file:inbox/inputFile?fileName=inputProducts.csv&noop=true")
-                    .split().tokenize("\n", 10)
+                    .split().tokenize("\\n", 10)
                     .unmarshal(inputCSV)
                     .bean(Processor.class, "processCSV")
                     .marshal(outputCSV)
